@@ -1,0 +1,1038 @@
+/* Reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, img {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* フッターを最下部に固定するため */
+}
+
+body {
+  font-family: 'Noto Sans JP', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  flex-direction: column; /* フッターの配置を調整 */
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+ul, li {
+  list-style: none;
+}
+
+/* Header */
+#header {
+  background-color: #fff;
+  text-align: center; /* 追加：画像を中央寄せ */
+}
+
+#header img {
+  max-width: 100%; /* 追加：画像がコンテナをはみ出さないように */
+  height: auto; /* 追加：アスペクト比を維持 */
+  display: block; /* 追加：画像の下部の余白を削除 */
+  margin: 0 auto -1px; /* 追加：水平方向の中央寄せ */
+}
+
+#header .sp-kv {
+  display: none; /* デフォルトでは非表示 */
+  width: 100%;
+}
+
+#header .pc-kv {
+  display: block; /* デフォルトでは表示 */
+}
+
+/* Main */
+main {
+  max-width: 1300px;
+  margin: 0 auto 40px;
+  flex: 1;
+}
+
+/* セクション別テキスト */
+.sec-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+}
+
+
+.fixed-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Section: お悩み */
+#onayami {
+  padding: 50px 20px 0;
+  background-color: #ebebeb;
+  background-image: 
+    repeating-linear-gradient(90deg, #ddd, #ddd 5px, transparent 5px, transparent 10px);
+  background-size: 20px 100%;
+  background-position: 0 0, 10px 10px;
+  text-align: center;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  will-change: background-image;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* 既存の吹き出しスタイルを#onayamiにも適用 */
+#onayami .balloon-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px auto;
+  padding: 0 20px;
+  max-width: 1000px;
+}
+
+#onayami img {
+  margin-bottom: -6px;
+}
+
+/* Section: パートナー */
+#partner {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#partner .sec-text {
+  margin-bottom: 30px; /* 追加：sec-textとh5の間にマージンを追加 */
+}
+
+#partner h5 {
+  padding: 0 15%;  /* 左右に20%のパディングを追加 */
+  margin-bottom: 30px;
+}
+
+/* POINTボックスの共通スタイル */
+#partner #balloon1, #balloon2, #balloon3 {
+  display: inline-block;
+  border-radius: 10px;
+  width: 200px;
+  height: auto;
+  padding: 20px 10px;
+  text-align: center;
+  margin: 10px;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+  position: relative; /* 追加：疑似要素の位置決めのため */
+}
+
+/* 三角形の矢印を追加 */
+#partner #balloon1::after,
+#partner #balloon2::after,
+#partner #balloon3::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 15px 15px 0 15px;
+  border-color: inherit;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+/* 各バルーンの矢印の色を設定 */
+#partner #balloon1::after {
+  border-top-color: #009BF6;
+}
+
+#partner #balloon2::after {
+  border-top-color: #7F81F6;
+}
+
+#partner #balloon3::after {
+  border-top-color: #6be790;
+}
+
+/* balloon-contentのスタイル */
+#partner .balloon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* POINTテキストのスタイル */
+#partner .balloon-content h4 {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 情報ボタンのスタイル */
+.info-button {
+  background: #FFFFFF;
+  width: 90%;
+  height: 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 各バルーンの色に合わせたボタンテキストカラー */
+#balloon1 .info-button {
+  color: #009BF6;
+}
+
+#balloon2 .info-button {
+  color: #7F81F6;
+}
+
+#balloon3 .info-button {
+  color: #6be790;
+}
+
+/* ホバーエフェクト */
+.info-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* POINTテキストのスタイル */
+#partner .balloon-content h4 {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 各POINTの個別スタイル */
+#partner #balloon1 {
+    background-color: #009BF6;
+}
+
+#partner #balloon2 {
+    background-color: #7F81F6;
+}
+
+#partner #balloon3 {
+    background-color: #6be790;
+}
+
+/* POINTテキストのスタイル */
+#partner #balloon1 h4,
+#partner #balloon2 h4,
+#partner #balloon3 h4 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+#partner img {
+  margin-bottom: -60px;
+}
+
+/* Section: 不安 */
+#fuan {
+  padding: 50px 20px 0;
+  background-color: #ebebeb;
+  background-image: 
+    repeating-linear-gradient(90deg, #ddd, #ddd 5px, transparent 5px, transparent 10px);
+  background-size: 20px 100%;
+  background-position: 0 0, 10px 10px;
+  text-align: center;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  will-change: background-image;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+/* 吹き出しのコンテナ */
+#fuan .balloon-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px auto;
+  padding: 0 20px;
+  max-width: 1000px;
+}
+
+/* 吹き出し */
+#textbaloon1,
+#textbaloon2,
+#textbaloon3 {
+  flex: 0 1 18%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 15px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 真ん中の吹き出しを黄色に */
+#onayami #textbaloon2 {
+  background: #ffe200;
+}
+
+/* 真ん中の吹き出しの三角形も黄色に */
+#onayami #textbaloon2::after {
+  border-color: #ffe200 transparent transparent transparent;
+}
+
+/* 吹き出しの三角形 - 中央 */
+#textbaloon2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 15px 15px 0 15px;
+  border-color: #fff transparent transparent transparent;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+/* 吹き出しの三角形 - 左 */
+#textbaloon1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 75%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 15px 15px 0 15px;
+  border-color: #fff transparent transparent transparent;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+/* 吹き出しの三角形 - 右 */
+#textbaloon3::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 25%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 15px 15px 0 15px;
+  border-color: #fff transparent transparent transparent;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+/* テキストのスタイル */
+#textbaloon1 h4,
+#textbaloon2 h4,
+#textbaloon3 h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  width: 100%;
+}
+
+#fuan img {
+  margin-bottom: -6px;
+}
+
+
+/* Section: 安心 */
+#anshin {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#anshin .sec-text {
+  margin-bottom: 40px; /* 追加：sec-textとh5の間にマージンを追加 */
+}
+
+
+/* ステップリストのコンテナ */
+.step-container {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+/* ステップアイテム */
+.step-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* ステップ番号 */
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  color: #009bf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+/* ステップテキスト */
+.step-text {
+  background: linear-gradient(90deg, #009bf6, #46cdb3);
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 15px;
+  border-radius: 50px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+/* 縦線 */
+.step-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 45px;
+  width: 2px;
+  height: 60px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #27b4d5 0px,
+    #27b4d5 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Section: 声 */
+#voice {
+  padding: 50px 20px;
+  background-color: #ebebeb;
+  background-image: 
+    radial-gradient(#ddd 2px, transparent 2px),
+    radial-gradient(#ddd 2px, transparent 2px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  will-change: background-image;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.voice-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.voice-container {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.voice-item {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 偶数番目のvoiceは順序を反転 */
+#user-voice2, #user-voice4 {
+  flex-direction: row-reverse;
+}
+
+.voice-image {
+  flex: 0 0 100px;
+}
+
+.voice-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.voice-text {
+  position: relative;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: unset;
+  text-align: center;
+}
+
+/* 左側の吹き出し（青） */
+.voice-text-left {
+  background: #fff !important;
+}
+
+.voice-text-left::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 15px 15px 15px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+/* 右側の吹き出し（黄色） */
+.voice-text-right {
+  background: #ffe200 !important;
+}
+
+.voice-text-right::before {
+  content: '';
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent transparent transparent #ffe200;
+}
+
+/* テキストのスタイル調整 */
+.voice-text h4 {
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+/* Section: 質問 */
+#q1 h4, #q2 h4, #q3 h4 {
+  font-weight: 500; /* 太字から通常のウェイトに変更 */
+}
+
+/* Aのテキストスタイル */
+#q1 div:last-child h4,
+#q2 div:last-child h4,
+#q3 div:last-child h4 {
+  color: #009bf6;
+}
+
+#question {
+  padding: 80px 20px 0px;
+}
+
+#question div {
+  margin-bottom: 20px;
+}
+
+#question img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.question-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Q&Aのスタイリング */
+#q1, #q2, #q3 {
+    border-bottom: 2px dotted #c9c9c9;  /* 点線を追加 */
+    padding-bottom: 20px;  /* 下部の余白を追加 */
+    margin-bottom: 20px;  /* 次のQ&Aとの間隔を追加 */
+}
+
+/* 最後のQ&Aの下線を消す */
+#q3 {
+    border-bottom: none;
+}
+
+#q1 div, #q2 div, #q3 div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.qa-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Qの丸のスタイル */
+#q1 > div:first-child .qa-circle,
+#q2 > div:first-child .qa-circle,
+#q3 > div:first-child .qa-circle {
+  border: 1px solid #009bf6;
+  color: #009bf6;
+  background-color: #fff;
+}
+
+/* Aの丸のスタイル */
+#q1 > div:last-child .qa-circle,
+#q2 > div:last-child .qa-circle,
+#q3 > div:last-child .qa-circle {
+  background: linear-gradient(90deg, #009bf6, #46cdb3);
+  color: white;
+}
+
+#support-balloon {
+  text-align: center;
+  background-color: #009bf6;
+  width: 40%;
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+#support-balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 20px 15px 0 15px;
+  border-color: #009bf6 transparent transparent transparent;
+}
+
+/* Section: お問い合わせ */
+#contact {
+  background-color: #fff;
+  padding: 50px 20px;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto ;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.contact-form {
+  margin-top: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  background: linear-gradient(60deg, #009bf6, #46cdb3);
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(60deg, #46cdb3, #009bf6);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+#footer {
+  color: #fff;
+  text-align: center;
+  margin-top: auto;
+  line-height: 0;
+}
+
+.footer-content {
+  position: relative;
+  text-align: center; /* 追加：中央寄せ */
+}
+
+#footer img {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0 auto; /* 追加：画像を中央に配置 */
+}
+
+/* コピーライト用のスタイル */
+.copyright {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.copyright p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+/* Reset追加 */
+h2.sec-text {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  /* Main */
+  main {
+    margin: 0 auto 30px;
+  }
+
+  /* セクション共通 */
+  .sec-text {
+    font-size: 1.6rem;
+  }
+
+  /* パートナーセクション */
+  #partner .balloon-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #partner #balloon1,
+  #partner #balloon2,
+  #partner #balloon3 {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  /* お悩み・不安セクション */
+  #onayami .balloon-container,
+  #fuan .balloon-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #textbaloon1,
+  #textbaloon2,
+  #textbaloon3 {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* 声セクション */
+  .voice-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .voice-text::before {
+    display: none;
+  }
+
+  /* 質問セクション */
+  #support-balloon {
+    width: 80%;
+  }
+}
+
+/* スマートフォン (480px以下) */
+@media screen and (max-width: 480px) {
+  /* セクション共通 */
+  .sec-text {
+    font-size: 1.4rem;
+  }
+
+  /* Header */
+  #header .sp-kv {
+    display: block; /* スマートフォンサイズでは表示 */
+  }
+  
+  #header .pc-kv {
+    display: none; /* スマートフォンサイズでは非表示 */
+  }
+
+  html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    display: block;
+    position: static;
+  }
+
+  main {
+    flex: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #header {
+    position: static;
+    width: 100%;
+  }
+
+  #footer {
+    position: static;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .footer-content {
+    position: relative;
+  }
+
+  /* 各セクションの左右パディングを調整 */
+
+  #partner,
+  #anshin,
+  #voice,
+  #question,
+  #contact {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  /* パートナーセクション */
+  #partner img {
+    width: 80%; /* 画像を80%に縮小 */
+    height: auto;
+    margin-bottom: -30px; /* 画像が小さくなるので、下マージンも調整 */
+  }
+
+  /* お悩み・不安セクション */
+  #onayami img,
+  #fuan img {
+    width: 80%; /* 画像を80%に縮小 */
+    height: auto;
+    margin-bottom: -3px; /* 画像が小さくなるので、下マージンも調整 */
+  }
+
+  #textbaloon1,
+  #textbaloon2,
+  #textbaloon3 {
+    width: 100%;
+  }
+
+  /* 安心セクション */
+  .step-text {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  /* 声セクション */
+  .voice-text {
+    padding: 20px;
+  }
+
+  .voice-image img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* 質問セクション */
+  #question img {
+    width: 80%; /* 画像を80%に縮小 */
+    height: auto;
+  }
+
+  #support-balloon {
+    width: 70%; /* 幅を70%に調整 */
+    font-size: 1rem;
+    padding: 8px 15px;
+    margin: 0 auto 40px; /* 左右のマージンをautoに設定して中央寄せ */
+  }
+
+  #support-balloon h3 {
+    font-size: 1rem; /* サポートバルーンのテキストサイズを調整 */
+  }
+
+  .qa-circle {
+    width: 40px; /* Q/Aの円のサイズも少し小さく */
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 0.9rem;
+  }
+
+  #support-balloon {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* お問い合わせセクション */
+  .contact-form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  /* 質問セクション */
+  #question {
+    padding: 80px 20px 0px;
+    box-sizing: border-box; /* パディングを幅に含める */
+  }
+
+  .question-container {
+    padding: 0; /* 不要なパディングを削除 */
+  }
+
+  /* コピーライトの位置を調整 */
+  .copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .copyright p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #fff;
+  }
+}
+
+/* フッター画像の基本設定 */
+#footer .sp-footer {
+  display: none;
+  width: 100%;
+}
+
+#footer .pc-footer {
+  display: block;
+}
+
+@media screen and (max-width: 480px) {
+  /* 既存のスマートフォン用スタイル ... */
+  
+  /* フッター画像の切り替え */
+  #footer .sp-footer {
+      display: block;
+  }
+  
+  #footer .pc-footer {
+      display: none;
+  }
+}
+
+/* スマートフォン対応の基本設定を追加/修正 */
+@media screen and (max-width: 480px) {
+  /* 右側の白い線を防ぐための設定 */
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* メインコンテンツの調整 */
+  main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* support-balloonの修正 */
+  #support-balloon {
+    width: calc(100% - 40px); /* 左右のパディングを考慮 */
+    margin: 0 auto 40px;
+    box-sizing: border-box;
+  }
+
+  #support-balloon h3 {
+    font-size: 0.8rem; /* サポートバルーンのテキストサイズを調整 */
+  }
+
+  /* contactセクションの修正 */
+  #contact {
+    width: 100%;
+    padding: 50px 20px;
+    box-sizing: border-box;
+  }
+
+  .contact-container {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .contact-form {
+    width: 100%;
+    margin: 30px 0 0;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .submit-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
