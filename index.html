@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </head>
 
     <body>
@@ -17,6 +18,14 @@
             <img src="img/PC/KV.png" class="pc-kv">
             <img src="img/SP/SP_MV.png" class="sp-kv">
         </header>
+
+        <div class="floating-button">
+            <a href="#contact" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                <span class="contact-text">お問い合わせはこちら</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
 
         <main>
 
@@ -113,7 +122,7 @@
                     <div class="step-item">
                         <div class="step-text">
                             <div class="step-number">3</div>
-                            契約締結～技能実習計画の策定
+                            契約締結～技能実習計画の��定
                         </div>
                     </div>
                     <div class="step-item">
@@ -214,7 +223,7 @@
                         </div>
                         <div>
                             <span class="qa-circle">A</span>
-                            <h4>初回は契約金額の40%となります。<br>※一般的な人材会社の費用（例えば理論年収の30%）と比較してかなりお安くなります。<br>ランニングコストなどについてもお気軽にお問い合わせください。</h4>
+                            <h4>初回��契約金額の40%となります。<br>※一般的な人材会社の費用（例ば理論年収の30%）と比較してかなりお安くなります。<br>ランニングコストなどについてもお気軽にお問い合わせください。</h4>
                         </div>
                     </div>
                     <div id="q3">
@@ -281,5 +290,26 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingButton = document.querySelector('.floating-button');
+            const contactSection = document.querySelector('#contact');
+
+            window.addEventListener('scroll', function() {
+                if (contactSection) {
+                    const rect = contactSection.getBoundingClientRect();
+                    // contactセクションが画面内に入ったら
+                    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                        floatingButton.style.opacity = '0';
+                        floatingButton.style.pointerEvents = 'none';
+                    } else {
+                        floatingButton.style.opacity = '1';
+                        floatingButton.style.pointerEvents = 'auto';
+                    }
+                }
+            });
+        });
+        </script>
     </body>
 </html>

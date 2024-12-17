@@ -1036,3 +1036,78 @@ h2.sec-text {
     box-sizing: border-box;
   }
 }
+
+/* フローティングボタンのスタイル */
+.floating-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* アイコンとテキストの間隔を調整 */
+    background: linear-gradient(60deg, #009bf6, #46cdb3);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* アイコンのサイズ調整 */
+.contact-link i {
+    font-size: 1.1em;
+}
+
+/* 右矢印のマージン調整 */
+.contact-link .fa-chevron-right {
+    margin-left: auto; /* テキストとの間隔を自動調整 */
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-text {
+    margin-right: 10px;
+}
+
+.arrow {
+    font-size: 1.2em;
+}
+
+/* スマートフォン対応 */
+@media screen and (max-width: 480px) {
+    .floating-button {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .contact-link {
+        padding: 10px 15px; /* パディングを小さく */
+        font-size: 0.8em; /* フォントサイズを小さく */
+    }
+
+    .contact-text {
+        font-size: 0.9em; /* テキストサイズをさらに小さく */
+    }
+
+    .contact-link i {
+        font-size: 0.9em; /* アイコンサイズも小さく */
+    }
+}
+
+/* フッター付近でボタンを非表示にする */
+@media screen and (max-height: 200px) {
+    .floating-button {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
