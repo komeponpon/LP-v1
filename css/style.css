@@ -991,49 +991,24 @@ h2.sec-text {
     overflow-x: hidden;
   }
 
-  /* support-balloonの修正 */
-  #support-balloon {
-    width: calc(100% - 40px); /* 左右のパディングを考慮 */
-    margin: 0 auto 40px;
-    box-sizing: border-box;
+  body {
+    display: block;
+    position: static;
   }
 
-  #support-balloon h3 {
-    font-size: 0.8rem; /* サポートバルーンのテキストサイズを調整 */
-  }
-
-  /* contactセクションの修正 */
-  #contact {
+  #header {
+    position: static;
     width: 100%;
-    padding: 50px 20px;
-    box-sizing: border-box;
   }
 
-  .contact-container {
+  #footer {
+    position: static;
     width: 100%;
-    padding: 0;
-    margin: 0 auto;
+    margin-top: 0;
   }
 
-  .contact-form {
-    width: 100%;
-    margin: 30px 0 0;
-  }
-
-  .form-group {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .submit-btn {
-    width: 100%;
-    box-sizing: border-box;
+  .footer-content {
+    position: relative;
   }
 }
 
@@ -1092,7 +1067,7 @@ h2.sec-text {
 
     .contact-link {
         padding: 10px 15px; /* パディングを小さく */
-        font-size: 0.8em; /* フォントサイズを小さく */
+        font-size: 0.8em; /* フォン���サイズを小さく */
     }
 
     .contact-text {

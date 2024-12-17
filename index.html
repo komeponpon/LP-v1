@@ -295,20 +295,44 @@
         document.addEventListener('DOMContentLoaded', function() {
             const floatingButton = document.querySelector('.floating-button');
             const contactSection = document.querySelector('#contact');
+            const footer = document.querySelector('#footer');
 
-            window.addEventListener('scroll', function() {
-                if (contactSection) {
-                    const rect = contactSection.getBoundingClientRect();
-                    // contactセクションが画面内に入ったら
-                    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                        floatingButton.style.opacity = '0';
-                        floatingButton.style.pointerEvents = 'none';
-                    } else {
-                        floatingButton.style.opacity = '1';
-                        floatingButton.style.pointerEvents = 'auto';
+            function checkButtonVisibility() {
+                if (window.innerWidth <= 480) {
+                    // スマホ表示時はフッターとの位置関係で判定
+                    if (footer) {
+                        const footerRect = footer.getBoundingClientRect();
+                        if (footerRect.top <= window.innerHeight) {
+                            floatingButton.style.opacity = '0';
+                            floatingButton.style.pointerEvents = 'none';
+                        } else {
+                            floatingButton.style.opacity = '1';
+                            floatingButton.style.pointerEvents = 'auto';
+                        }
+                    }
+                } else {
+                    // PC表示時は従来通りcontactセクションとの位置関係で判定
+                    if (contactSection) {
+                        const rect = contactSection.getBoundingClientRect();
+                        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                            floatingButton.style.opacity = '0';
+                            floatingButton.style.pointerEvents = 'none';
+                        } else {
+                            floatingButton.style.opacity = '1';
+                            floatingButton.style.pointerEvents = 'auto';
+                        }
                     }
                 }
-            });
+            }
+
+            // スクロール時に実行
+            window.addEventListener('scroll', checkButtonVisibility);
+            
+            // 初期表示時にも実行
+            checkButtonVisibility();
+            
+            // リサイズ時にも実行
+            window.addEventListener('resize', checkButtonVisibility);
         });
         </script>
     </body>
